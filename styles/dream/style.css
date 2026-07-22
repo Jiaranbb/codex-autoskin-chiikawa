@@ -269,9 +269,9 @@ html.codex-dream-skin main.main-surface > * {
 }
 
 html.codex-dream-skin main.main-surface > header.app-header-tint {
-  background:
-    linear-gradient(90deg, rgba(255,249,252,.95), rgba(255,227,243,.84), rgba(229,207,255,.78)) !important;
-  border-bottom: 1px solid rgba(229,151,198,.34) !important;
+  z-index: 30 !important;
+  background: var(--color-token-main-surface-primary, #fff) !important;
+  border-bottom: 1px solid var(--color-token-border-light, rgba(0, 0, 0, .08)) !important;
   backdrop-filter: none !important;
 }
 
