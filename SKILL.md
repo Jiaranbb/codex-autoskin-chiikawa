@@ -49,7 +49,7 @@ Themes are data, not code: the injector scans `themes/` and `themes-private/` fo
 - `styles/dream/style.css`: structure layer; consumes tokens only, contains no theme names.
 - `assets/renderer-inject.js`: idempotent DOM integration and cleanup; fully manifest-driven.
 - `themes/<name>/`, `themes-private/<name>/`: theme data folders (`theme.json`, art, optional `extra.css`). `themes-private/` is git-ignored for local-only themes.
-- `tools/generate-demo-art.py`: reproducible generator for the bundled demo art.
+- `themes/summer/`: bundled default Chiikawa Summer theme, including its final art and scoped CSS refinements.
 - `references/qa-inventory.md`: required functional and visual signoff coverage.
 - `references/runtime-notes.md`: troubleshooting and update behavior.
 - `references/scene-art-swap.md`: worked example of swapping a theme's art for a full-canvas scene image (THEME-SPEC §5.1 preset) with the live-tuning workflow and final tokens.

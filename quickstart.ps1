@@ -86,7 +86,7 @@ try {
   $list = (& $nodeCmd.Source $setTheme --list) | ConvertFrom-Json
   if ($list.ok) { $defaultTheme = $list.defaultTheme }
 } catch {}
-if (-not $defaultTheme) { $defaultTheme = 'aurora-veil' }
+if (-not $defaultTheme) { $defaultTheme = 'summer' }
 & $nodeCmd.Source $setTheme $defaultTheme fullscreen | Out-Null
 if ($LASTEXITCODE -ne 0) { Fail "皮肤在跑，但应用主题失败。手动试试：node scripts\set-theme.mjs $defaultTheme fullscreen" }
 Ok "当前主题：$defaultTheme（全屏版式）"

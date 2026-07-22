@@ -29,7 +29,7 @@ themes/<name>/            # 公开主题；本地私用放 themes-private/<name>
 
 ```jsonc
 {
-  "name": "aurora-veil",        // 可选。必须等于文件夹名
+  "name": "summer",             // 可选。必须等于文件夹名
   "order": 10,                  // 可选，默认 100。切换列表排序键（小的在前，同序按名字）
   "default": false,             // 可选。true = 启动默认主题；多个 true 取排序后第一个。
                                 //   没有任何 true 时取扫描到的第一个主题。
@@ -191,9 +191,9 @@ themes/<name>/            # 公开主题；本地私用放 themes-private/<name>
 源图
 ├── A. 干净艺术图 / 人像 / 插画（无文字、无 UI 元素）
 │     ├── A1. 整体偏暗 → 白标题 + 深色左 overlay
-│     │        模板：themes/aurora-veil/theme.json（生成的极光夜空）
+│     │        做法：使用深色底图、白标题与深色左侧 overlay
 │     └── A2. 整体偏亮 → 深色标题 + 近白左 overlay
-│              模板：themes/ember-bloom/theme.json（生成的暖光花瓣）
+│              模板：themes/summer/theme.json（亮色泳池主题）
 └── B. 带界面文字/水印/排版元素的截图或海报
       ├── B1. 存在"够窗口大"的干净区域（主体周围有一块无字区）
       │        → 放大裁剪，只取干净区 + 左 overlay 首档全不透明
