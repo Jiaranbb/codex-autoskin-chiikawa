@@ -4,6 +4,10 @@
 
 > Unofficial fan-made theme. See [ASSET-NOTICE.md](ASSET-NOTICE.md) before redistributing the artwork.
 
+## 主题预览
+
+![Chiikawa 夏日泳池主题预览](docs/summer-preview.png)
+
 ## 主题效果
 
 - 主标题：`Chiikawa 夏日泳池皮肤`
