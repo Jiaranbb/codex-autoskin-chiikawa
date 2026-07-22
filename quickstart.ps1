@@ -2,8 +2,7 @@
 #
 #   .\quickstart.ps1
 #
-# 可以重复执行（幂等）。装好之后，用自己的图做主题：
-#   .\quick-theme.ps1 -Image C:\path\你的图.png
+# 可以重复执行（幂等），用于首次安装或修复 Summer 主题。
 #
 # 兼容 Windows PowerShell 5.1 与 PowerShell 7+（文件本身为 UTF-8 with BOM）。
 
@@ -94,8 +93,5 @@ Ok "当前主题：$defaultTheme（全屏版式）"
 Write-Host ''
 Write-Host "成功！Codex 已经换上 '$defaultTheme' 主题。" -ForegroundColor Green
 Write-Host ''
-Write-Host '  下一步，把你自己的图变成主题（自动取色、立即生效）：'
-Write-Host '    .\quick-theme.ps1 -Image C:\path\你的图.png' -ForegroundColor Cyan
-Write-Host ''
-Write-Host '  看所有主题：node scripts\set-theme.mjs --list'
-Write-Host '  还原官方外观：.\scripts\restore-dream-skin.ps1'
+Write-Host '  主题失效时：重新运行 .\quickstart.ps1'
+Write-Host '  还原官方外观：.\scripts\restore-dream-skin.ps1 -Uninstall -RestoreBaseTheme'

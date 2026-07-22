@@ -32,7 +32,9 @@ STATE_PATH="$STATE_ROOT/state.json"
 WATCHER_STATE_PATH="$STATE_ROOT/watcher-state.json"
 PLIST_PATH="$HOME/Library/LaunchAgents/com.codex-autoskin.watcher.plist"
 
-launchctl bootout "gui/$UID/com.codex-autoskin.watcher" >/dev/null 2>&1 || true
+if [ -f "$PLIST_PATH" ] || [ -f "$WATCHER_STATE_PATH" ]; then
+  launchctl bootout "gui/$UID/com.codex-autoskin.watcher" >/dev/null 2>&1 || true
+fi
 if [ -f "$WATCHER_STATE_PATH" ]; then
   WATCHER_PID="$(dream_read_json_number "$WATCHER_STATE_PATH" watcherPid 2>/dev/null || true)"
   [ -z "$WATCHER_PID" ] || dream_stop_pid_if_matches "$WATCHER_PID" "watch-dream-skin.sh"

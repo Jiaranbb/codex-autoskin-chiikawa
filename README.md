@@ -1,89 +1,41 @@
-# Codex AutoSkin Chiikawa — Summer Edition
+# Chiikawa 夏日泳池 Codex 皮肤
 
-一套可直接安装的 Chiikawa 夏日泳池 Codex 桌面主题。仓库已包含最终背景、配色、卡片头像和全部细节配置；安装后默认启用 `summer` 全屏主题，无需再手动制作素材。
+给家人直接安装使用的 Summer 专版。仓库只包含最终主题和安装、自动恢复、卸载所需文件，不包含制皮工具或开发资料。
 
-> Unofficial fan-made theme. See [ASSET-NOTICE.md](ASSET-NOTICE.md) before redistributing the artwork.
+![Chiikawa 夏日泳池主题预览](docs/summer-preview.jpg)
 
-## 主题预览
+## macOS：推荐安装方式
 
-![Chiikawa 夏日泳池主题预览](docs/summer-preview.png)
+1. 安装并打开过一次 Codex。
+2. [下载最新版 ZIP](https://github.com/Jiaranbb/codex-autoskin-chiikawa/archive/refs/heads/master.zip) 并解压。
+3. 双击 `Install AutoSkin on macOS.command`。
+4. 如果系统阻止打开，请右键该文件并选择“打开”。
 
-## 主题效果
+主题失效时，重新双击同一个安装文件即可修复。
 
-- 主标题：`Chiikawa 夏日泳池皮肤`
-- 副标题：`Private Edition for HT`
-- 右侧签名：`Lucky lucky ❤`
-- 泳池全屏背景和右侧泳池壁构图
-- 半透明玻璃卡片与四个 Chiikawa 头像徽章
-- 夏日蓝色侧栏、标题栏、项目选择器和输入框
-- 首页与对话页均有独立调校
-
-运行时真正需要的主题文件只有：
-
-```text
-themes/summer/
-├── art.png       # 最终泳池背景
-├── theme.json    # 文案、配色、裁剪和透明度配置
-└── extra.css     # 卡片头像、Logo 和精细界面样式
-```
-
-## macOS 安装
-
-要求：已安装并至少打开过一次 Codex 桌面版。脚本会优先复用 Codex 自带的 Node.js。
+命令行安装：
 
 ```bash
-git clone https://github.com/Jiaranbb/codex-autoskin-chiikawa.git
+git clone --depth 1 https://github.com/Jiaranbb/codex-autoskin-chiikawa.git
 cd codex-autoskin-chiikawa
 ./scripts/autoskin-macos.sh install
 ```
 
-也可以下载仓库 ZIP，解压后双击 `Install AutoSkin on macOS.command`。
-
-如果 Codex 当时已经打开，按脚本提示允许重启，或安装后执行：
-
-```bash
-./scripts/autoskin-macos.sh start --restart-existing
-```
-
 ## Windows 安装
 
-要求：Windows 10/11、已打开并登录过 Microsoft Store 版 Codex，以及 Node.js 20 或更高版本。
+要求：Windows 10/11、Microsoft Store 版 Codex，以及 Node.js 20 或更高版本。
 
 ```powershell
-git clone https://github.com/Jiaranbb/codex-autoskin-chiikawa.git
+git clone --depth 1 https://github.com/Jiaranbb/codex-autoskin-chiikawa.git
 cd codex-autoskin-chiikawa
 .\quickstart.ps1
 ```
 
-## 使用与验证
+主题失效时重新运行 `.\quickstart.ps1`。
 
-Summer 已设为仓库默认主题。需要重新切回 Summer 全屏版时：
+## 卸载
 
-```bash
-node scripts/set-theme.mjs summer fullscreen
-```
-
-macOS 可执行完整验证并保存截图：
-
-```bash
-./scripts/verify-dream-skin.sh --screenshot "$PWD/summer-verify.png"
-```
-
-列出实际扫描到的主题：
-
-```bash
-node scripts/injector.mjs --themes
-```
-
-## 卸载与恢复
-
-macOS：
-
-```bash
-./scripts/autoskin-macos.sh uninstall --restore-base-theme
-```
-
-或双击 `Uninstall AutoSkin on macOS.command`。
+macOS：双击 `Uninstall AutoSkin on macOS.command`。
 
 Windows：
 
@@ -91,34 +43,8 @@ Windows：
 .\scripts\restore-dream-skin.ps1 -Uninstall -RestoreBaseTheme
 ```
 
-AutoSkin 通过本机 Chromium DevTools Protocol 注入样式，不修改 Codex 官方应用包、签名或 `app.asar`。用户任务、登录状态和插件不会被替换。
+AutoSkin 不修改 Codex 官方应用包、签名或 `app.asar`，不会替换用户任务、登录状态和插件。自动恢复服务会在 Codex 正常重启后重新应用主题。
 
-## Credits
+## 来源与许可
 
-Theme packaging and Summer configuration: [Jiaranbb/codex-autoskin-chiikawa](https://github.com/Jiaranbb/codex-autoskin-chiikawa)
-
-Based on the reversible AutoSkin engine from [Finderchangchang/codex-autoskin](https://github.com/Finderchangchang/codex-autoskin). Engine code is licensed under [MIT](LICENSE); theme artwork is governed separately by [ASSET-NOTICE.md](ASSET-NOTICE.md).
-
----
-
-## English quick start
-
-This repository packages a ready-to-install Chiikawa Summer pool theme for the Codex desktop app. The bundled `summer` theme is the default; no image preparation is required.
-
-macOS:
-
-```bash
-git clone https://github.com/Jiaranbb/codex-autoskin-chiikawa.git
-cd codex-autoskin-chiikawa
-./scripts/autoskin-macos.sh install
-```
-
-Windows PowerShell:
-
-```powershell
-git clone https://github.com/Jiaranbb/codex-autoskin-chiikawa.git
-cd codex-autoskin-chiikawa
-.\quickstart.ps1
-```
-
-Please read [ASSET-NOTICE.md](ASSET-NOTICE.md) before public redistribution.
+本项目基于 [Finderchangchang/codex-autoskin](https://github.com/Finderchangchang/codex-autoskin)，引擎代码沿用原项目的 [MIT License](LICENSE)。主题素材说明见 [ASSET-NOTICE.md](ASSET-NOTICE.md)。

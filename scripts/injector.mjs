@@ -163,7 +163,7 @@ async function waitForTargets(port, timeoutMs, { includeAuxiliary = false } = {}
 //   - one `:root.codex-dream-skin.dream-theme-<name> { ...tokens }` block per theme
 //   - the concatenated, scope-validated per-theme extra.css
 //   - the art asset table (data URLs) and the runtime manifest (order/meta/defaults)
-// See THEME-SPEC.md for the authoring contract.
+// Theme manifests are validated before their scoped CSS is injected.
 // ---------------------------------------------------------------------------
 
 const THEME_DIRS = ["themes", "themes-private"];
@@ -502,7 +502,7 @@ async function loadThemes() {
     }
   }
   if (!themes.length) {
-    throw new Error("No valid themes found under themes/ or themes-private/. See THEME-SPEC.md.");
+    throw new Error("No valid themes found under themes/ or themes-private/.");
   }
   themes.sort((a, b) => (a.order - b.order) || a.name.localeCompare(b.name, "en"));
   const defaultTheme = (themes.find((theme) => theme.isDefault) ?? themes[0]).name;
