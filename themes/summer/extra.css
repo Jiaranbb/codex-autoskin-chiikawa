@@ -225,15 +225,21 @@ html.dream-theme-summer aside.app-shell-left-panel [class~="group/nav-section-ti
 
 html.dream-theme-summer aside.app-shell-left-panel button[aria-label="打开个人资料菜单"],
 html.dream-theme-summer aside.app-shell-left-panel button[aria-label="Open profile menu"] {
-  border-color: rgba(76, 187, 211, .48) !important;
-  background: radial-gradient(circle at 86% 14%, rgba(255, 255, 255, .94), transparent 42%), linear-gradient(135deg, rgba(252, 255, 255, .96), rgba(215, 247, 252, .90)) !important;
-  box-shadow: 0 5px 14px rgba(21, 134, 159, .13), inset 0 1px 0 rgba(255, 255, 255, .94), inset 0 0 0 2px rgba(255, 255, 255, .52) !important;
+  border-color: transparent !important;
+  background: transparent !important;
+  box-shadow: none !important;
+}
+
+html.dream-theme-summer aside.app-shell-left-panel button[aria-label="打开个人资料菜单"]:hover,
+html.dream-theme-summer aside.app-shell-left-panel button[aria-label="Open profile menu"]:hover {
+  background: transparent !important;
+  box-shadow: none !important;
 }
 
 html.dream-theme-summer aside.app-shell-left-panel button[aria-label="打开个人资料菜单"]::after,
 html.dream-theme-summer aside.app-shell-left-panel button[aria-label="Open profile menu"]::after {
-  content: "❤";
-  color: #e8bd31;
+  content: none !important;
+  display: none !important;
 }
 
 html.dream-theme-summer aside.app-shell-left-panel button[aria-label="打开个人资料菜单"] img,
