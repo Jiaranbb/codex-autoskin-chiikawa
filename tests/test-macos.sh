@@ -44,8 +44,8 @@ THEME_REPORT="$TMP_ROOT/themes.json"
 "$NODE_BIN" "$ROOT/scripts/injector.mjs" --themes >"$THEME_REPORT"
 "$NODE_BIN" -e '
   const report = require(process.argv[1]);
-  if (report.defaultTheme !== "aurora-veil") throw new Error("unexpected default theme");
-  for (const name of ["aurora-veil", "ember-bloom"]) {
+  if (report.defaultTheme !== "summer") throw new Error("unexpected default theme");
+  for (const name of ["summer"]) {
     if (!report.themes.some((theme) => theme.name === name)) throw new Error(`missing ${name}`);
   }
 ' "$THEME_REPORT"
@@ -88,7 +88,7 @@ done
 
 echo "Checking one-image theme generation..."
 "$NODE_BIN" "$ROOT/scripts/generate-quick-theme-macos.mjs" \
-  --image "$ROOT/themes/ember-bloom/art.png" \
+  --image "$ROOT/themes/summer/art.png" \
   --name ci-quick-theme \
   --themes-root "$RUNTIME_ROOT/themes-private" \
   --reserved-root "$RUNTIME_ROOT/themes" >"$TMP_ROOT/quick-theme-result.json"
@@ -101,7 +101,7 @@ echo "Checking one-image theme generation..."
   if (Object.keys(manifest.tokens).length !== 28) throw new Error("generated theme must contain 28 tokens");
 ' "$TMP_ROOT/quick-theme-result.json" "$TMP_ROOT/themes-private/ci-quick-theme/theme.json"
 "$NODE_BIN" "$ROOT/scripts/generate-quick-theme-macos.mjs" \
-  --image "$ROOT/themes/ember-bloom/art.png" \
+  --image "$ROOT/themes/summer/art.png" \
   --name ci-quick-theme \
   --themes-root "$RUNTIME_ROOT/themes-private" \
   --reserved-root "$RUNTIME_ROOT/themes" >/dev/null
@@ -116,15 +116,15 @@ echo "Checking one-image theme generation..."
   }
 ' "$TMP_ROOT/runtime-themes.json"
 if "$NODE_BIN" "$ROOT/scripts/generate-quick-theme-macos.mjs" \
-  --image "$ROOT/themes/ember-bloom/art.png" \
-  --name aurora-veil \
+  --image "$ROOT/themes/summer/art.png" \
+  --name summer \
   --themes-root "$RUNTIME_ROOT/themes-private" \
   --reserved-root "$RUNTIME_ROOT/themes" >/dev/null 2>&1; then
   fail "quick-theme overwrote a built-in theme"
 fi
-/usr/bin/sips -s format jpeg "$ROOT/themes/aurora-veil/art.png" --out "$TMP_ROOT/夜空.jpg" >/dev/null
+/usr/bin/sips -s format jpeg "$ROOT/themes/summer/art.png" --out "$TMP_ROOT/泳池.jpg" >/dev/null
 "$NODE_BIN" "$ROOT/scripts/generate-quick-theme-macos.mjs" \
-  --image "$TMP_ROOT/夜空.jpg" \
+  --image "$TMP_ROOT/泳池.jpg" \
   --themes-root "$RUNTIME_ROOT/themes-private" \
   --reserved-root "$RUNTIME_ROOT/themes" >"$TMP_ROOT/auto-name-result.json"
 "$NODE_BIN" -e '
@@ -132,12 +132,12 @@ fi
   const result = JSON.parse(fs.readFileSync(process.argv[1], "utf8"));
   const manifest = JSON.parse(fs.readFileSync(`${result.themeDirectory}/theme.json`, "utf8"));
   if (!/^my-theme-[a-f0-9]{6}$/.test(result.name)) throw new Error("non-Latin filename fallback is invalid");
-  if (manifest.art.home !== "art.jpg" || result.route !== "dark") throw new Error("JPG dark-route generation failed");
+  if (manifest.art.home !== "art.jpg" || result.route !== "light") throw new Error("JPG light-route generation failed");
 ' "$TMP_ROOT/auto-name-result.json"
 mkdir -p "$TMP_ROOT/themes-private/manual-theme"
 printf '{}\n' >"$TMP_ROOT/themes-private/manual-theme/theme.json"
 if "$NODE_BIN" "$ROOT/scripts/generate-quick-theme-macos.mjs" \
-  --image "$ROOT/themes/ember-bloom/art.png" \
+  --image "$ROOT/themes/summer/art.png" \
   --name manual-theme \
   --themes-root "$RUNTIME_ROOT/themes-private" \
   --reserved-root "$RUNTIME_ROOT/themes" >/dev/null 2>&1; then
@@ -195,7 +195,7 @@ HOME="$TEST_HOME" /bin/bash -c '
   [ "$(dream_installed_port)" = "19337" ]
 ' test "$INSTALLED_ROOT"
 HOME="$TEST_HOME" "$INSTALLED_ROOT/runtime/scripts/autoskin-macos.sh" quick-theme \
-  "$ROOT/themes/aurora-veil/art.png" --name installed-quick-theme --no-apply --node "$NODE_BIN" >/dev/null
+  "$ROOT/themes/summer/art.png" --name installed-quick-theme --no-apply --node "$NODE_BIN" >/dev/null
 [ -f "$INSTALLED_ROOT/themes-private/installed-quick-theme/theme.json" ] || fail "installed quick-theme did not persist its theme"
 "$NODE_BIN" "$INSTALLED_ROOT/runtime/scripts/injector.mjs" --themes >"$TMP_ROOT/installed-themes.json"
 "$NODE_BIN" -e '

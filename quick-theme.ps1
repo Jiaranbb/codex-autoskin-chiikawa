@@ -239,7 +239,7 @@ $tokens['--dream-polaroid-art-size'] = 'cover'
 $tokens['--dream-polaroid-art-position'] = '65% 35%'
 
 if ($isLight) {
-  # 亮图路线（参照 ember-bloom 模板）：近白 overlay + 深色标题
+  # 亮图路线：近白 overlay + 深色标题
   $pale1 = MixWhite $tintBase 0.05
   $pale2 = MixWhite $tintBase 0.1
   $pale3 = MixWhite $tintBase 0.16
@@ -256,7 +256,7 @@ if ($isLight) {
   $chatOpacity = '.12'
   $tokens['--dream-chat-wash'] = RgbaOf (MixWhite $tintBase 0.02) '.72'
 } else {
-  # 暗图路线（参照 aurora-veil 模板）：深 overlay + 白标题
+  # 暗图路线：深 overlay + 白标题
   $deep1 = Get-RgbFromHsl $main.H ([Math]::Min(($dSat + 0.1), 0.8)) 0.13
   $deep2 = Get-RgbFromHsl $main.H ([Math]::Min(($dSat + 0.1), 0.8)) 0.18
   $deep3 = Get-RgbFromHsl $main.H $dSat 0.24

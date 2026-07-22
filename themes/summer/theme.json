@@ -1,0 +1,70 @@
+{
+  "name": "summer",
+  "order": 10,
+  "default": true,
+  "notes": {
+    "generator": "hand-refined",
+    "platform": "windows-macos",
+    "route": "light",
+    "source": "Summer pool artwork and character badges supplied by the repository owner.",
+    "zh": "Chiikawa Summer 专版主题；首页、聊天背景、卡片与输入框均已完整调校。"
+  },
+  "meta": {
+    "button": "夏日",
+    "brand": "Chiikawa 夏日泳池皮肤",
+    "edition": "Private Edition for HT",
+    "signature": "Lucky lucky ❤"
+  },
+  "art": {
+    "home": "art.png",
+    "chat": "art.png"
+  },
+  "cards": {
+    "subtitles": [
+      "快速读懂代码的逻辑与结构",
+      "把清凉灵感变成可用功能",
+      "细致审查并给出改进建议",
+      "定位问题，稳稳给出修复方案"
+    ],
+    "icons": [null, null, null, null],
+    "opacity": 0.46
+  },
+  "composer": {
+    "placeholder": "在清凉水花里写下你的想法…"
+  },
+  "tokens": {
+    "--dream-ink": "#1a3c4d",
+    "--dream-purple": "#1c97b0",
+    "--dream-violet": "#42bed7",
+    "--dream-pink": "#eed463",
+    "--dream-page-bg-0": "#f8fdfe",
+    "--dream-page-bg-1": "#edfafc",
+    "--dream-page-glow-a": "rgba(88, 205, 228, .30)",
+    "--dream-page-glow-b": "rgba(239, 214, 108, .26)",
+    "--dream-hero-art-size": "cover",
+    "--dream-hero-art-position": "58% 38%",
+    "--dream-fullscreen-art-size": "cover",
+    "--dream-fullscreen-art-position": "100% 50%",
+    "--dream-polaroid-art-size": "cover",
+    "--dream-polaroid-art-position": "88% 78%",
+    "--dream-hero-overlay": "linear-gradient(90deg, rgba(242, 253, 255, .98) 0%, rgba(229, 249, 253, .92) 55%, rgba(202, 240, 248, .62) 78%, transparent 100%)",
+    "--dream-fullscreen-overlay-width": "100%",
+    "--dream-fullscreen-overlay": "radial-gradient(108% 84% at 21% 28%, rgba(242, 253, 255, .76) 0%, rgba(224, 248, 253, .54) 36%, rgba(183, 234, 245, .22) 56%, rgba(133, 217, 236, .05) 72%, transparent 84%)",
+    "--dream-fullscreen-wash": "linear-gradient(180deg, rgba(245, 254, 255, .08) 0%, rgba(245, 254, 255, .01) 36%, rgba(234, 251, 254, .02) 68%, rgba(223, 247, 252, .10) 100%)",
+    "--dream-hero-title-color": "#146171",
+    "--dream-hero-subtitle-color": "rgba(20, 97, 113, .82)",
+    "--dream-hero-title-shadow": "0 1px 0 rgba(255, 255, 255, .92)",
+    "--dream-hero-chip-color": "#1b8fa7",
+    "--dream-hero-chip-bg": "rgba(255, 255, 255, .58)",
+    "--dream-hero-chip-line": "rgba(32, 170, 197, .36)",
+    "--dream-chat-wash": "rgba(248, 254, 255, .78)",
+    "--dream-chat-art-opacity": ".18",
+    "--dream-hero-subtitle": "\"泡进清凉夏日，把灵感慢慢漂起来 ✦\"",
+    "--dream-chat-art-size": "cover",
+    "--dream-chat-art-position": "54% 50%",
+    "--dream-card-frame": "transparent",
+    "--dream-card-ornament": "transparent",
+    "--dream-card-sub-color": "#3f7480",
+    "--dream-card-icon-color": "#ffffff"
+  }
+}
