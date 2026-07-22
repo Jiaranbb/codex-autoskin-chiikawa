@@ -32,11 +32,13 @@ INSTALL_STATE_PATH="$STATE_ROOT/install-state.json"
 CONFIG_PATH="$HOME/.codex/config.toml"
 BACKUP_PATH="$STATE_ROOT/config.before-dream-skin.toml"
 PLIST_PATH="$HOME/Library/LaunchAgents/com.codex-autoskin.watcher.plist"
+WATCHER_STATE_PATH="$STATE_ROOT/watcher-state.json"
 mkdir -p "$STATE_ROOT" "$HOME/Library/LaunchAgents"
 [ -f "$CONFIG_PATH" ] || dream_die "Codex config not found: $CONFIG_PATH"
 
-launchctl bootout "gui/$UID/com.codex-autoskin.watcher" >/dev/null 2>&1 || true
-WATCHER_STATE_PATH="$STATE_ROOT/watcher-state.json"
+if [ -f "$PLIST_PATH" ] || [ -f "$WATCHER_STATE_PATH" ]; then
+  launchctl bootout "gui/$UID/com.codex-autoskin.watcher" >/dev/null 2>&1 || true
+fi
 if [ -f "$WATCHER_STATE_PATH" ]; then
   WATCHER_PID="$(dream_read_json_number "$WATCHER_STATE_PATH" watcherPid 2>/dev/null || true)"
   [ -z "$WATCHER_PID" ] || dream_stop_pid_if_matches "$WATCHER_PID" "watch-dream-skin.sh"

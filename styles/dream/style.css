@@ -872,7 +872,7 @@ html.dream-layout-fullscreen .dream-home > div:first-child > div:first-child > d
 
 html.dream-layout-fullscreen .dream-home > div:first-child > div:first-child > div:first-child::before {
   /* Width 100% + a radial/vertical gradient in --dream-fullscreen-overlay turns
-     this into the "scene" preset for full-canvas art (see THEME-SPEC.md §5.1). */
+     this into a full-canvas scene preset when required. */
   width: var(--dream-fullscreen-overlay-width);
   border-radius: 26px 0 0 26px;
   background: var(--dream-fullscreen-overlay);
